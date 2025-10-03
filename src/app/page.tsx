@@ -19,18 +19,26 @@ export default function Home() {
 
       {/* Header */}
       <header className="relative z-10">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-          <Link href="/" className="inline-flex items-center gap-2">
-            <div className="h-6 w-6 rounded-md bg-white" />
-            <span className="text-sm font-semibold tracking-wide">CV99x</span>
-          </Link>
-          <nav className="hidden items-center gap-6 md:flex">
-            <a href="#features" className="text-sm text-white/70 hover:text-white">Features</a>
-            <a href="#waitlist" className="text-sm text-white/70 hover:text-white">Join waitlist</a>
-            <a href="mailto:support@cv99x.com" className="text-sm text-white/70 hover:text-white">Contact</a>
-          </nav>
-        </div>
-      </header>
+  <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+    <Link href="/" className="inline-flex items-center gap-2">
+      {/* <div className="h-6 w-6 rounded-md bg-white" /> */}
+      <Image
+        src="/logo.png"
+        alt="CV99x logo"
+        width={60}
+        height={60}
+        priority
+        className="w-[50px] h-[50px] rounded-md mr-0 pr-0" // enforce 100x100
+      />
+      <span className="text-xl font-semibold tracking-wide mx-0 px-0">CV99x</span>
+    </Link>
+    <nav className="hidden items-center gap-6 md:flex">
+      <a href="#features" className="text-sm text-white/70 hover:text-white">Features</a>
+      <a href="#waitlist" className="text-sm text-white/70 hover:text-white">Join waitlist</a>
+      <a href="mailto:support@cv99x.com" className="text-sm text-white/70 hover:text-white">Contact</a>
+    </nav>
+  </div>
+</header>
 
       {/* Hero */}
       <section className="relative z-10">
@@ -69,9 +77,17 @@ export default function Home() {
 
           {/* Screenshot placeholder (replace later) */}
           <div className="relative h-64 w-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] shadow-[0_0_0_1px_rgba(255,255,255,0.02)] backdrop-blur md:h-80">
-            <div className="absolute inset-0 grid place-items-center text-white/50">
-              <span className="text-sm">Your preview image here</span>
-            </div>
+            {/* <div className="absolute inset-0 grid place-items-center text-white/50">
+              <span className="text-sm">Your preview image here</span> 
+            </div> */}
+                        <Image
+              src="/appBanner1.png"
+              alt="CV99x app preview"
+              fill
+              priority
+              sizes="(min-width: 768px) 560px, 100vw"
+              className="object-contain"
+            />
           </div>
         </div>
       </section>
@@ -101,7 +117,7 @@ export default function Home() {
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
               <h3 className="font-medium">Pay-as-you-go</h3>
               <p className="mt-2 text-sm text-white/70">
-                Under $1 per application—only pay when you generate.
+                Super Affordable & only pay when you generate.
               </p>
             </div>
           </div>
@@ -122,4 +138,3 @@ export default function Home() {
     </div>
   );
 }
-// ...existing code...
