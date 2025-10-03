@@ -204,7 +204,7 @@ export default function WaitlistForm() {
                     <SelectItem value="lt_0_50">Less than $0.80</SelectItem>
                     <SelectItem value="0_50_0_99">$0.80 – $0.99</SelectItem>
                     {/* Removed $1 – $2 option */}
-                    <SelectItem value="gt_2">More than $2 (for premium jobs)</SelectItem>
+                    <SelectItem value="gt_2">More than $1</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -261,14 +261,21 @@ export default function WaitlistForm() {
               <Button
                 type="submit"
                 disabled={loading}
-                className="w-full rounded-xl bg-white text-black hover:bg-white/90"
+                className="cursor-pointer w-full rounded-xl bg-white text-black hover:bg-white/90"
                 size="lg"
               >
                 {loading ? "Joining..." : "Join the Waitlist"}
               </Button>
               <p className="mt-3 text-center text-xs text-white/50">
-                No spam. Occasional updates and early access invites only.
-              </p>
+                No spam. Early access invites only. For any query, contact{" "}
+                <a 
+                    href="mailto:support@cv99x.com" 
+                    className="underline cursor-pointer hover:text-white"
+                >
+                    support@cv99x.com
+                </a>
+                </p>
+
             </div>
           </form>
         </div>
