@@ -5,7 +5,7 @@ import WaitlistForm from "./components/WaitlistForm";
 // ...existing code...
 export default function Home() {
   return (
-    <div className="relative min-h-[100svh] bg-black text-white">
+    <div className="relative min-h-dvh overflow-x-clip overscroll-y-none bg-black text-white">
       {/* Background accents */}
       <div
         aria-hidden

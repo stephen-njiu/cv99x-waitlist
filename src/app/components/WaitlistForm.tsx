@@ -86,9 +86,9 @@ export default function WaitlistForm() {
       setLoading(false);
     }
   }
-
+  // relative min-h-[90vh] w-full overflow-x-hidden bg-black text-white
   return (
-    <main className="relative min-h-[90vh] w-full overflow-hidden bg-black text-white">
+    <main className="relative min-h-[90vh] w-full overflow-x-hidden bg-black text-white">
       {/* Techy background accents */}
       <div
         aria-hidden
