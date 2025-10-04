@@ -1,0 +1,23 @@
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+
+export default function SuccessPage() {
+  return (
+    <main className="min-h-dvh bg-black text-white flex items-center justify-center px-6">
+      <div className="w-full max-w-md rounded-2xl border border-white/10 bg-white/[0.04] p-8 text-center shadow-[0_0_0_1px_rgba(255,255,255,0.02)] backdrop-blur">
+        <h1 className="text-2xl font-semibold">Form submitted successfully</h1>
+        <p className="mt-2 text-sm text-white/70">
+          Thank you for joining the CV99x waitlist. We’ll be in touch soon.
+        </p>
+        <div className="mt-6 flex items-center justify-center gap-3">
+          <Button asChild size="sm" variant="secondary" className="border border-white/15 bg-white/5 text-white hover:bg-white/10">
+            <a href="https://www.google.com" rel="noopener noreferrer">Exit</a>
+          </Button>
+          <Button asChild size="sm" className="bg-white text-black hover:bg-white/90">
+            <Link href="/">Back to Home</Link>
+          </Button>
+        </div>
+      </div>
+    </main>
+  );
+}

@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { useRouter } from "next/navigation";
+
 import {
   Select,
   SelectContent,
@@ -36,6 +38,7 @@ const initialForm: FormState = {
 };
 
 export default function WaitlistForm() {
+  const router = useRouter();
   const [form, setForm] = useState<FormState>(initialForm);
   const [loading, setLoading] = useState(false);
   const [successMsg, setSuccessMsg] = useState<string | null>(null);
@@ -77,8 +80,8 @@ export default function WaitlistForm() {
         throw new Error(`Request failed: ${res.status}`);
       }
 
-      setSuccessMsg("You're on the list! We'll notify you as soon as CV99x opens.");
-      setForm(initialForm);
+      router.push("/success");
+      return;
     } catch (err) {
       setErrorMsg("Something went wrong. Please try again shortly.");
       console.error(err);

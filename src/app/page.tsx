@@ -1,6 +1,7 @@
 import Image from "next/image"; // i will be using images later
 import Link from "next/link";
 import WaitlistForm from "./components/WaitlistForm";
+import HeroCarousel from "./components/HeroCarousel";
 
 // ...existing code...
 export default function Home() {
@@ -75,19 +76,12 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Screenshot placeholder (replace later) */}
+          {/* Replace with Image Corousel */}
           <div className="relative h-64 w-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] shadow-[0_0_0_1px_rgba(255,255,255,0.02)] backdrop-blur md:h-80">
-            {/* <div className="absolute inset-0 grid place-items-center text-white/50">
-              <span className="text-sm">Your preview image here</span> 
-            </div> */}
-                        <Image
-              src="/appBanner1.png"
-              alt="CV99x app preview"
-              fill
-              priority
-              sizes="(min-width: 768px) 560px, 100vw"
-              className="object-cover"
-            />
+          <HeroCarousel
+            images={["/appBanner1.png", "/appBanner2.png", "/appBanner3.png", "/appBanner4.png", "/appBanner5.png"]}
+            fit="cover"
+          />
           </div>
         </div>
       </section>
