@@ -49,18 +49,20 @@ export default function Home() {
               <span className="h-1.5 w-1.5 rounded-full bg-white/80" />
               Early Access
             </p>
-            <h1 className="text-3xl font-semibold leading-tight tracking-tight md:text-5xl">
-              AI resumes + covers. One setup. Infinite tailored applications.
+            <h1 className="text-2xl font-semibold leading-tight tracking-tight md:text-5xl">
+            {/* AI resumes that adapt to every job. One setup — infinite tailored applications. */}
+            AI resume generator that creates job winning resumes and job covers!
             </h1>
-            <p className="mt-4 max-w-xl text-white/70">
-              Generate ATS-friendly resumes and cover letters for each job in seconds.
+            <p className="mt-4 max-w-xl text-white">
+            {/* Skip the edits — get a job-ready, ATS-approved resume and job cover in seconds. */}
+            Skip the edits - Set up your profile once, generate tailored resumes and job covers for every job you apply to in seconds.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a
                 href="#waitlist"
                 className="inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 text-sm font-medium text-black hover:bg-white/90"
               >
-                Join the waitlist
+                Get Early Access
               </a>
               <a
                 href="#features"
@@ -69,9 +71,9 @@ export default function Home() {
                 Learn more
               </a>
             </div>
-            <div className="mt-6 flex items-center gap-6 text-xs text-white/50">
-              <span>Most Advanced Resume Generator</span>
-              <span>Adaptable</span>
+            <div className="mt-6 flex items-center gap-6 text-xs text-white font-semibold">
+              <span>AI Resume Generator</span>
+              <span>Adapts to Every Job You Apply</span>
               <span>Early adopter perks</span>
             </div>
           </div>
@@ -106,12 +108,13 @@ export default function Home() {
               <h3 className="font-medium">ATS-friendly</h3>
               <p className="mt-2 text-sm text-white/70">
                 Clean structure and keywords to pass automated screenings.
+                Adaptive AI — it learns, refines, and evolves with every job you apply for.
               </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
               <h3 className="font-medium">Pay-as-you-go</h3>
               <p className="mt-2 text-sm text-white/70">
-                Super Affordable & only pay when you generate.
+                Super Affordable & only pay when you generate. No subscriptions.
               </p>
             </div>
           </div>

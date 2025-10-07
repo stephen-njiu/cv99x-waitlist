@@ -19,7 +19,6 @@ type FormState = {
   name: string;
   email: string;
   frustration: string;
-  dream: string;
   priceRange: string;
   paymentStyle: string;
   heardFrom: string; // repurposed: open-ended notes
@@ -30,7 +29,6 @@ const initialForm: FormState = {
   name: "",
   email: "",
   frustration: "",
-  dream: "",
   priceRange: "",
   paymentStyle: "",
   heardFrom: "",
@@ -89,10 +87,8 @@ export default function WaitlistForm() {
       setLoading(false);
     }
   }
-  // relative min-h-[90vh] w-full overflow-x-hidden bg-black text-white
   return (
     <main className="relative min-h-[90vh] w-full overflow-x-hidden bg-black text-white">
-      {/* Techy background accents */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-40"
@@ -110,10 +106,10 @@ export default function WaitlistForm() {
               Early Access
             </p>
             <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
-              Join the CV99x Waitlist
+              Join the CV99x Early Access
             </h1>
             <p className="mt-3 text-sm text-white/70">
-              CV99x – AI-powered resume and cover letter generator. One setup, infinite tailored applications in seconds. Pay-as-you-go under $1.
+              CV99x – AI-powered resume and cover letter generator. One setup, infinite tailored resumes and job covers in seconds.
             </p>
           </header>
 
@@ -162,7 +158,29 @@ export default function WaitlistForm() {
               </div>
             </div>
 
-            {/* Frustration */}
+            {/* Pricing + Payment */}
+            <div className="grid grid-cols-1 gap-5">
+              <div className="space-y-2">
+                <Label className="text-white/80">
+                  Have you ever used a resume or cover letter generator before? (optional)
+                </Label>
+                <Select
+                  value={form.priceRange}
+                  onValueChange={(v) => setForm((f) => ({ ...f, priceRange: v }))}
+                >
+                  <SelectTrigger className="border-white/15 bg-white/5 text-white focus:ring-0 focus-visible:ring-white/30">
+                    <SelectValue placeholder="Select one" />
+                  </SelectTrigger>
+                  <SelectContent className="border-white/15 bg-[#0f0f12] text-white">
+                    <SelectItem value="lt_0_50">Yes</SelectItem>
+                    <SelectItem value="0_50_0_99">No</SelectItem>
+                    <SelectItem value="gt_2">No, But I would like to try one!</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+            </div>
+
             <div className="space-y-2">
               <Label htmlFor="frustration" className="text-white/80">
                 What frustrates you most about creating resumes or job applications today? (optional)
@@ -172,77 +190,6 @@ export default function WaitlistForm() {
                 placeholder="Type your answer..."
                 value={form.frustration}
                 onChange={onChange("frustration")}
-                className="min-h-[96px] border-white/15 bg-white/5 text-white placeholder:text-white/40 focus-visible:ring-white/30"
-              />
-            </div>
-
-            {/* Dream */}
-            <div className="space-y-2">
-              <Label htmlFor="dream" className="text-white/80">
-                If CV99x could guarantee you one thing about your job applications, what would it be? (optional)
-              </Label>
-              <Textarea
-                id="dream"
-                placeholder="Type your answer..."
-                value={form.dream}
-                onChange={onChange("dream")}
-                className="min-h-[96px] border-white/15 bg-white/5 text-white placeholder:text-white/40 focus-visible:ring-white/30"
-              />
-            </div>
-
-            {/* Pricing + Payment */}
-            <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-              <div className="space-y-2">
-                <Label className="text-white/80">
-                  How much would you feel comfortable paying per resume + job cover?
-                </Label>
-                <Select
-                  value={form.priceRange}
-                  onValueChange={(v) => setForm((f) => ({ ...f, priceRange: v }))}
-                >
-                  <SelectTrigger className="border-white/15 bg-white/5 text-white focus:ring-0 focus-visible:ring-white/30">
-                    <SelectValue placeholder="Select a range" />
-                  </SelectTrigger>
-                  <SelectContent className="border-white/15 bg-[#0f0f12] text-white">
-                    <SelectItem value="lt_0_50">Less than $0.80</SelectItem>
-                    <SelectItem value="0_50_0_99">$0.80 – $0.99</SelectItem>
-                    {/* Removed $1 – $2 option */}
-                    <SelectItem value="gt_2">More than $1</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-              <div className="space-y-2">
-                <Label className="text-white/80">Would you prefer to pay…</Label>
-                <Select
-                  value={form.paymentStyle}
-                  onValueChange={(v) => setForm((f) => ({ ...f, paymentStyle: v }))}
-                >
-                  <SelectTrigger className="border-white/15 bg-white/5 text-white focus:ring-0 focus-visible:ring-white/30">
-                    <SelectValue placeholder="Select a style" />
-                  </SelectTrigger>
-                  <SelectContent className="border-white/15 bg-[#0f0f12] text-white">
-                    <SelectItem value="per_job">
-                      Per job (resume + cover generated instantly)
-                    </SelectItem>
-                    <SelectItem value="bundle_5">
-                      A small bundle (e.g., 5 resumes)
-                    </SelectItem>
-                    {/* Removed daily/weekly pass option */}
-                  </SelectContent>
-                </Select>
-              </div>
-            </div>
-
-            {/* Open-ended notes (replaces 'How did you hear about CV99x?') */}
-            <div className="space-y-2">
-              <Label htmlFor="notes" className="text-white/80">
-                Anything else you’d like us to know? (optional)
-              </Label>
-              <Textarea
-                id="notes"
-                placeholder="Share context, goals, or anything that would help us tailor CV99x."
-                value={form.heardFrom}
-                onChange={onChange("heardFrom")}
                 className="min-h-[96px] border-white/15 bg-white/5 text-white placeholder:text-white/40 focus-visible:ring-white/30"
               />
             </div>
@@ -267,10 +214,10 @@ export default function WaitlistForm() {
                 className="cursor-pointer w-full rounded-xl bg-white text-black hover:bg-white/90"
                 size="lg"
               >
-                {loading ? "Joining..." : "Join the Waitlist"}
+                {loading ? "Joining..." : "Get Early Access"}
               </Button>
               <p className="mt-3 text-center text-xs text-white/50">
-                No spam. Early access invites only. For any query, contact{" "}
+              Limited early invites only — priority access before public launch. For any query, contact{" "}
                 <a 
                     href="mailto:support@cv99x.com" 
                     className="underline cursor-pointer hover:text-white"
