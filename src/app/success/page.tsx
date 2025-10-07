@@ -7,7 +7,7 @@ export default function SuccessPage() {
       <div className="w-full max-w-md rounded-2xl border border-white/10 bg-white/[0.04] p-8 text-center shadow-[0_0_0_1px_rgba(255,255,255,0.02)] backdrop-blur">
         <h3 className="text-2xl font-semibold">Thank you for your feedback and for joining the CV99x waitlist!</h3>
         <p className="mt-2 text-sm text-white/70">
-          We’re thrilled to have you with us. You’ll be the first to know when early access opens — and we can’t wait to help you transform your resume experience.
+          We’re thrilled to have you with us and we can’t wait to help you transform your resume experience.
         </p>
         <div className="mt-6 flex items-center justify-center gap-3">
           <Button asChild size="sm" variant="secondary" className="border border-white/15 bg-white/5 text-white hover:bg-white/10">

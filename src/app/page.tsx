@@ -55,7 +55,7 @@ export default function Home() {
             </h1>
             <p className="mt-4 max-w-xl text-white">
             {/* Skip the edits — get a job-ready, ATS-approved resume and job cover in seconds. */}
-            Skip the edits - Set up your profile once, generate tailored resumes and job covers for every job you apply to in seconds.
+            Skip the edits - Set up your profile once, generate tailored resumes and job covers for every job you apply to.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a
@@ -72,7 +72,7 @@ export default function Home() {
               </a>
             </div>
             <div className="mt-6 flex items-center gap-6 text-xs text-white font-semibold">
-              <span>AI Resume Generator</span>
+              <span>Generates in Seconds</span>
               <span>Adapts to Every Job You Apply</span>
               <span>Early adopter perks</span>
             </div>

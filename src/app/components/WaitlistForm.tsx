@@ -172,9 +172,9 @@ export default function WaitlistForm() {
                     <SelectValue placeholder="Select one" />
                   </SelectTrigger>
                   <SelectContent className="border-white/15 bg-[#0f0f12] text-white">
-                    <SelectItem value="lt_0_50">Yes</SelectItem>
-                    <SelectItem value="0_50_0_99">No</SelectItem>
-                    <SelectItem value="gt_2">No, But I would like to try one!</SelectItem>
+                    <SelectItem value="Yes">Yes</SelectItem>
+                    <SelectItem value="No">No</SelectItem>
+                    <SelectItem value="No, But I would like to try one!">No, But I would like to try one!</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -205,7 +205,6 @@ export default function WaitlistForm() {
                 {successMsg}
               </div>
             )}
-
             {/* Submit */}
             <div className="pt-2">
               <Button
