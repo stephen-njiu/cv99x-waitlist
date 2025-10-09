@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "cv99x waitlist",
-  description: "CV99x – AI-powered resume and cover letter generator. One setup, infinite tailored applications in seconds. Pay-as-you-go under $1.",
+  description: "CV99x – AI-powered resume and cover letter generator. One setup, infinite tailored applications in seconds.",
 };
 
 export default function RootLayout({
